@@ -1,0 +1,42 @@
+<!DOCTYPE html  "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace ="static/base-layout :: head"></head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+</head>
+
+<body>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div th:if="${param.error}" class="alert alert-danger mb-3">Incorrect Credentials</div>
+            <div class="card">
+                <div class="card-header">
+                    <h4>Enter Alkemy Blog</h4>
+                </div>
+                <div class="card-body">
+
+                    <form id="loginform" th:action="@{/auth/login}"
+                          role="form">
+                        <div class="row form-group">
+                            <label class="col-md-3">Username</label><input
+                                type="text" name="username" class="form-control col-md-7"/>
+                        </div>
+
+                        <div class="row form-group">
+                            <label class="col-md-3">Password</label><input type="password"
+                                                                           name="password"
+                                                                           class="form-control col-md-7"/>
+                        </div>
+                        <div class="row form-group">
+
+                            <input type="submit" class="btn btn-success btn-block col-md-7 offset-3" value="Continue"/>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html  "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.w3.org/1999/xhtml
+<head>
+    <meta charset=" ISO-8859-1">
+<title>Blog Posts</title>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+              crossorigin="anonymous">
+        <div class="row">
+            <div class="col-12 col-md-8"></div>
+            </head>
+            <body>
+            <div class="container mt-4">
+                <h4>Blog Posts</h4>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Image</th>
+                        <th>Category</th>
+                        <th>Content</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="post:${posts}">
+
+                        <td th:text="${post.id}"></td>
+                        <td th:text="${post.title}"></td>
+                        <td th:text="${post.image}"></td>
+                        <td th:text="${post.category}"></td>
+                        <td th:text="${post.content}"></td>
+
+                        <td>
+
+
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            </body>
+            </html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html  "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html>
+<head ></head>
+<meta charset="ISO-8859-1">
+
+
+<body>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header"><h4>Sign up</h4></div>
+                <div class= "card-body">
+
+                    <form th:action="@{/auth/sign_up}" th:object=${user} method="POST">
+                        <div class="row form-group">
+                            <label class="col-md-3">Id</label>
+                            <input type="text" class="form-control col-md-7" th:field="*{id}"/>
+                            <small th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></small>
+                        </div>
+
+                        <div class="row form-group">
+                            <label class="col-md-3">Email</label>
+                            <input type="text" class="form-control col-md-7" th:field="*{email}"/>
+
+                        </div>
+
+                        <div class="row form-group">
+                            <label class="col-md-3">Username</label>
+                            <input type="text" class="form-control col-md-7" th:field="*{username}"/>
+
+
+
+                        </div>
+                        <div class="row form-group">
+                            <label class="col-md-3">Password</label>
+                            <input type="password" class="form-control col-md-7" th:field="*{password}"/>
+
+
+
+                        </div>
+                        <div class="row form-group">
+                            <input type="submit" class="btn btn-success btn-block col-md-7 offset-3"value="Continue"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</head>
+</html>
